@@ -1,5 +1,6 @@
 package DeckOfCards;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 public class Deck {
@@ -42,5 +43,35 @@ public class Deck {
 		}
 	}
 	
+	public void shuffle()
+	{
+		for (int x=0; x<100; x++)
+		{
+			Random rand=new Random();
+			int i= rand.nextInt(51)+0;
+			int j= rand.nextInt(51)+0;
+			Card tempCard=DeckOfCards.get(i);
+			DeckOfCards.set(i, DeckOfCards.get(j));
+			DeckOfCards.set(j, tempCard);
+
+
+		}
+	}
 	
+	public void shuffle(int frequency)
+	{
+		for (int x=0; x<frequency; x++)
+		{
+			Random rand=new Random();
+			int i= rand.nextInt(51)+0;
+			int j= rand.nextInt(51)+0;
+			Card tempCard=DeckOfCards.get(i);
+			DeckOfCards.set(i, DeckOfCards.get(j));
+			DeckOfCards.set(j, tempCard);
+
+
+		}
+	}
 }
+
+
