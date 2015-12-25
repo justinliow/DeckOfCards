@@ -6,15 +6,15 @@ public class Test {
 		Deck test = new Deck();
 		//System.out.println(test.DeckOfCards.size());
 		int deckSize = test.DeckOfCards.size();
-		test.shuffle();
+		test.shuffle(100000);
 
 		for(int x = 0; x < deckSize; x++)
 		{
 			Card tempCard = test.deal();
+
 			System.out.println("Value: " + tempCard.getValue());
 			System.out.println("Suit: " + tempCard.getSuit());
 		}
-		
 		
 	}
 }
