@@ -1,18 +1,25 @@
 package DeckOfCards;
 
 public class Card {
-	public int suit;
-	public int value;
+	private int suit;
+	private int value;
 	
 	public Card(int suit, int value)
 	{
 		this.suit=suit;
 		this.value=value;
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	public int getSuit()
+	{
+		return this.suit;
 	}
+	
+	public int getValue()
+	{
+		return this.value;
+	}
+
+	
 
 }
