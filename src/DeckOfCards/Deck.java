@@ -68,8 +68,6 @@ public class Deck {
 			Card tempCard=DeckOfCards.get(i);
 			DeckOfCards.set(i, DeckOfCards.get(j));
 			DeckOfCards.set(j, tempCard);
-
-
 		}
 	}
 }
