@@ -21,7 +21,7 @@ public class Deck {
 
 	public Card show()
 	{
-		Card topCard=DeckOfCards.get(DeckOfCards.size()-1);
+		Card topCard = DeckOfCards.get(DeckOfCards.size()-1);
 		return topCard;
 	}
 	public Card deal()
@@ -29,7 +29,6 @@ public class Deck {
 		Card topCard=DeckOfCards.get(DeckOfCards.size()-1);
 		Dealt.add(topCard);
 		DeckOfCards.remove(DeckOfCards.size()-1);
-		//DeckOfCards.trimToSize();
 		return topCard;
 	}
 	
@@ -38,7 +37,7 @@ public class Deck {
 		while(!Dealt.isEmpty())
 		{
 			Card dealtTop=Dealt.remove(Dealt.size()-1);
-			Dealt.trimToSize();
+			//Dealt.trimToSize();
 			DeckOfCards.add(dealtTop);
 		}
 	}
@@ -48,8 +47,8 @@ public class Deck {
 		for (int x=0; x<100; x++)
 		{
 			Random rand=new Random();
-			int i= rand.nextInt(51)+0;
-			int j= rand.nextInt(51)+0;
+			int i = rand.nextInt(51) + 0;
+			int j = rand.nextInt(51) + 0;
 			Card tempCard=DeckOfCards.get(i);
 			DeckOfCards.set(i, DeckOfCards.get(j));
 			DeckOfCards.set(j, tempCard);
