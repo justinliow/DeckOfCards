@@ -14,8 +14,10 @@ public class War
 		GameDeck.shuffle(100000);
 		for(int i = 0; i < 26; i ++)
 		{
-			playerOne.add(GameDeck.deal());
+			//System.out.println(GameDeck.show().getValue());
 			playerTwo.add(GameDeck.deal());
+			//System.out.println(GameDeck.show().getValue());
+			playerOne.add(GameDeck.deal());
 		}
 	}
 	
@@ -26,6 +28,7 @@ public class War
 	
 	public static int Fight(Card one, Card two)
 	{
+		//System.out.println("Player 1: " + one.getValue() + " Player 2:" + two.getValue());
 		if(one.getValue() > two.getValue())
 		{
 			return 0;
