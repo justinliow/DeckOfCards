@@ -11,7 +11,7 @@ public class War
 	public static void SetUp()
 	{
 		Deck GameDeck = new Deck();
-		GameDeck.shuffle(5000);
+		GameDeck.shuffle(100000);
 		for(int i = 0; i < 26; i ++)
 		{
 			playerOne.add(GameDeck.deal());
@@ -52,8 +52,18 @@ public class War
 			playerOne.remove(playerOne.size()-1);
 			Card playerTwoDraw = DrawSoldier(playerTwo);
 			playerTwo.remove(playerTwo.size()-1);
-			Fight(playerOneDraw, playerTwoDraw);
+			if(Fight(playerOneDraw, playerTwoDraw) == 0)
+			{
+				playerOne.add(0, playerOneDraw);
+				playerOne.add(0, playerTwoDraw);
+			}
+			else
+			{
+				playerTwo.add(0, playerTwoDraw);
+				playerTwo.add(0, playerOneDraw);
+			}
 		}
+		System.out.println(playerTwo.size());
 	}
 	
 	public static void main(String[] args) 
