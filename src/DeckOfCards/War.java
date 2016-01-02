@@ -16,12 +16,28 @@ public class War
 		GameDeck.shuffle(10000);
 		playerOne.clear();
 		playerTwo.clear();
+		/*
 		for(int i = 0; i < 26; i ++)
 		{
 			//System.out.println(GameDeck.show().getValue());
 			playerTwo.add(GameDeck.deal());
 			//System.out.println(GameDeck.show().getValue());
 			playerOne.add(GameDeck.deal());
+		}
+		*/
+		/*
+		for(int x = 0; x < 52; x++)
+		{
+			Card tempCard = GameDeck.deal();
+			System.out.println("Value: " + tempCard.getValue());
+			System.out.println("Suit: " + tempCard.getSuit());
+		}
+		*/
+		
+		for(int i = 0; i < 52; i +=2)
+		{
+			playerTwo.add(GameDeck.DeckOfCards.get(i));
+			playerOne.add(GameDeck.DeckOfCards.get(i+1));
 		}
 	}
 	
