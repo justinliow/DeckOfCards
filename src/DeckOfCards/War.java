@@ -7,11 +7,15 @@ public class War
 {
 	static ArrayList<Card> playerOne = new ArrayList<Card>();
 	static ArrayList<Card> playerTwo = new ArrayList<Card>();
+	static int playerOneWins = 0;
+	static int playerTwoWins = 0;
 	
 	public static void SetUp()
 	{
 		Deck GameDeck = new Deck();
-		GameDeck.shuffle(100000);
+		GameDeck.shuffle(10000);
+		playerOne.clear();
+		playerTwo.clear();
 		for(int i = 0; i < 26; i ++)
 		{
 			//System.out.println(GameDeck.show().getValue());
@@ -47,32 +51,45 @@ public class War
 		}
 	}
 	
-	public static void Game()
+	public static void Game(int gameReps, int winCondition)
 	{
-		while(playerOne.size() > 5 && playerTwo.size() > 5)
+		for(int i = 0; i < gameReps; i++)
 		{
-			Card playerOneDraw = DrawSoldier(playerOne);
-			playerOne.remove(playerOne.size()-1);
-			Card playerTwoDraw = DrawSoldier(playerTwo);
-			playerTwo.remove(playerTwo.size()-1);
-			if(Fight(playerOneDraw, playerTwoDraw) == 0)
+			while(playerOne.size() > winCondition && playerTwo.size() > winCondition)
 			{
-				playerOne.add(0, playerOneDraw);
-				playerOne.add(0, playerTwoDraw);
+				Card playerOneDraw = DrawSoldier(playerOne);
+				playerOne.remove(playerOne.size()-1);
+				Card playerTwoDraw = DrawSoldier(playerTwo);
+				playerTwo.remove(playerTwo.size()-1);
+				if(Fight(playerOneDraw, playerTwoDraw) == 0)
+				{
+					playerOne.add(0, playerOneDraw);
+					playerOne.add(0, playerTwoDraw);
+				}
+				else
+				{
+					playerTwo.add(0, playerTwoDraw);
+					playerTwo.add(0, playerOneDraw);
+				}
+			}
+			if(playerOne.size() > playerTwo.size())
+			{
+				playerOneWins ++;
 			}
 			else
 			{
-				playerTwo.add(0, playerTwoDraw);
-				playerTwo.add(0, playerOneDraw);
+				playerTwoWins ++;
 			}
+			SetUp();
 		}
-		System.out.println(playerTwo.size());
+		System.out.println("Player One Won " + playerOneWins + " times.");
+		System.out.println("Player Two Won " + playerTwoWins + " times.");
 	}
 	
 	public static void main(String[] args) 
 	{
 		SetUp();
-		Game();
+		Game(1000,5);
 	}
 	
 	class WarPlayer
