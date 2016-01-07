@@ -49,7 +49,7 @@ public class Deck {
 			Random rand=new Random();
 			int i = rand.nextInt(51) + 0;
 			int j = rand.nextInt(51) + 0;
-			Card tempCard=DeckOfCards.get(i);
+			Card tempCard = DeckOfCards.get(i);
 			DeckOfCards.set(i, DeckOfCards.get(j));
 			DeckOfCards.set(j, tempCard);
 

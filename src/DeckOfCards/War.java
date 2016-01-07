@@ -48,7 +48,7 @@ public class War
 	
 	public static int Fight(Card one, Card two)
 	{
-		//System.out.println("Player 1: " + one.getValue() + " Player 2:" + two.getValue());
+		System.out.println("Player 1: " + one.getValue() + " Player 2: " + two.getValue());
 		if(one.getValue() > two.getValue())
 		{
 			return 0;
@@ -105,7 +105,7 @@ public class War
 	public static void main(String[] args) 
 	{
 		SetUp();
-		Game(1000,5);
+		Game(1,10);
 	}
 	
 	class WarPlayer
