@@ -26,19 +26,19 @@ public class Card {
 		String printOut="";
 		int currSuit=this.getSuit();
 		int currValue=this.getValue();
-		if(currSuit==0)
+		if(currSuit==1)
 		{
 			printSuit="Clovers";
 		}
-		else if(currSuit==1)
+		else if(currSuit==2)
 		{
 			printSuit="Diamonds";
 		}
-		else if(currSuit==2)
+		else if(currSuit==3)
 		{
 			printSuit="Hearts";
 		}
-		else if(currSuit==3)
+		else if(currSuit==4)
 		{
 			printSuit="Spades";
 		}
