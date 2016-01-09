@@ -62,8 +62,8 @@ public class Deck {
 		for (int x=0; x<frequency; x++)
 		{
 			Random rand=new Random();
-			int i= rand.nextInt(51) + 0;
-			int j= rand.nextInt(51) + 0;
+			int i= rand.nextInt(52) + 0;
+			int j= rand.nextInt(52) + 0;
 			Card tempCard=DeckOfCards.get(i);
 			DeckOfCards.set(i, DeckOfCards.get(j));
 			DeckOfCards.set(j, tempCard);
